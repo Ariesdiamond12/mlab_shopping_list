@@ -12,15 +12,15 @@ function Login() {
 
       {/* Form */}
       <div className="flex justify-center items-center h-full">
-        <form className="max-w-[400px] w-full mx-auto bg-white p-8">
+        <form className="max-w-[400px] w-full mx-auto bg-white p-8 rounded-lg">
           <h2 className="text-3xl font-bold text-center py-8">Login</h2>
-          <div className="flex flex-col mb-4">
+          <div className="flex flex-col py-2">
             <label> Username</label>
-            <input type="text" className="border-relative p-2" />
+            <input type="text" className="border p-2 rounded-lg" />
           </div>
-          <div className="flex flex-col mb-4">
+          <div className="flex flex-col py-2">
             <label>Password</label>
-            <input className="border-relative p-2" type="password" />
+            <input className="border p-2 rounded-lg" type="password" />
           </div>
           <button className="w-full py-3 mt-8 bg-[#001845] hover:bg-[#0353a4] relative text-white rounded-lg">
             Log In
