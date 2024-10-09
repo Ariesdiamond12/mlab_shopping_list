@@ -1,22 +1,24 @@
 import React, { useState } from "react";
 import { HiClipboardList } from "react-icons/hi";
 import { BsBasket2Fill } from "react-icons/bs";
+import { useSelector, useDispatch } from "react-redux";
+import { addItem, deleteItem, updateItem } from "../groceryList";
 
 function ShoppingList() {
-  const [groceryList, setGroceryList] = useState([]);
+  const [setGroceryList] = useState([]);
   const [itemName, setItemName] = useState("");
   const [quantity, setQuantity] = useState("");
   const [notes, setNotes] = useState("");
   const [editingItem, setEditingItem] = useState(null);
   const [search, setSearch] = useState("");
   const [queried, setQueried] = useState(groceryList);
+  const dispatch = useDispatch();
+  const groceryList = useSelector((state) => state.groceryList);
 
   const handleAddItem = () => {
     if (itemName && quantity) {
       const newItem = { name: itemName, quantity, notes };
-      const updatedList = [...groceryList, newItem];
-      setGroceryList(updatedList);
-      setQueried(updatedList);
+      dispatch(addItem(newItem));
       setItemName("");
       setQuantity("");
       setNotes("");
@@ -32,9 +34,7 @@ function ShoppingList() {
   };
 
   const handleDeleteItem = (index) => {
-    const updatedList = groceryList.filter((_, i) => i !== index);
-    setGroceryList(updatedList);
-    setQueried(updatedList);
+    dispatch(deleteItem(index)); // Dispatch the deleteItem action
   };
 
   const handleUpdateItem = (index) => {
@@ -53,6 +53,7 @@ function ShoppingList() {
 
     setGroceryList(updatedList);
     setQueried(updatedList);
+    dispatch(updateItem({ index, updatedItem }));
     setEditingItem(null);
     setItemName("");
     setQuantity("");
