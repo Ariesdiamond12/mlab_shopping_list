@@ -8,32 +8,33 @@ function ShoppingList() {
   const [quantity, setQuantity] = useState("");
   const [notes, setNotes] = useState("");
   const [editingItem, setEditingItem] = useState(null);
+  const [search, setSearch] = useState("");
+  const [queried, setQueried] = useState(groceryList);
 
   const handleAddItem = () => {
     if (itemName && quantity) {
-      setGroceryList([...groceryList, { name: itemName, quantity, notes }]);
+      const newItem = { name: itemName, quantity, notes };
+      const updatedList = [...groceryList, newItem];
+      setGroceryList(updatedList);
+      setQueried(updatedList);
       setItemName("");
       setQuantity("");
       setNotes("");
+
+      fetch(`http://localhost:3000/items`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newItem),
+      }).then((response) => {
+        response.json();
+      });
     }
-
-    fetch(`http:localhost:3000/items`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name: itemName, quantity, notes }),
-
-      name: itemName,
-      quantity: quantity,
-      notes: notes,
-    }).then((response) => {
-      console.log(response.json());
-
-      response.json();
-    });
   };
 
   const handleDeleteItem = (index) => {
-    setGroceryList(groceryList.filter((item, i) => i !== index));
+    const updatedList = groceryList.filter((_, i) => i !== index);
+    setGroceryList(updatedList);
+    setQueried(updatedList);
   };
 
   const handleUpdateItem = (index) => {
@@ -43,11 +44,15 @@ function ShoppingList() {
       quantity,
       notes,
     };
-    setGroceryList([
+
+    const updatedList = [
       ...groceryList.slice(0, index),
       updatedItem,
       ...groceryList.slice(index + 1),
-    ]);
+    ];
+
+    setGroceryList(updatedList);
+    setQueried(updatedList);
     setEditingItem(null);
     setItemName("");
     setQuantity("");
@@ -62,6 +67,17 @@ function ShoppingList() {
     setNotes(item.notes);
   };
 
+  // Search function
+  const handleSearch = (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+    setSearch(searchTerm);
+
+    const filteredList = groceryList.filter((item) =>
+      item.name.toLowerCase().includes(searchTerm)
+    );
+    setQueried(filteredList);
+  };
+
   return (
     <div className="bg-[#9BBEC8] flex py-4 min-h-screen justify-evenly">
       {/* 1st Column */}
@@ -73,7 +89,6 @@ function ShoppingList() {
         </div>
 
         {/* Input Box */}
-
         <div>
           <input
             className="flex items-center my-7 bg-gray-200 outline-none h-16 w-full pl-6 pr-2 placeholder:text-slate-600 rounded-full"
@@ -88,7 +103,7 @@ function ShoppingList() {
         </label>
         <input
           className="flex items-center my-7 bg-gray-200 outline-none h-16 w-full pl-6 pr-2 placeholder:text-slate-600 rounded-full"
-          type="text"
+          type="number"
           value={quantity}
           onChange={(e) => setQuantity(e.target.value)}
           placeholder="Quantity in kgs"
@@ -118,28 +133,30 @@ function ShoppingList() {
           <BsBasket2Fill className="text-5xl" />
           <h1 className="text-3xl font-semibold">Grocery List</h1>
         </div>
+        <input
+          className="flex items-center my-7 bg-gray-200 outline-none h-16 w-full pl-6 pr-2 placeholder:text-slate-600 rounded-full"
+          type="text"
+          placeholder="Search"
+          value={search}
+          onChange={handleSearch}
+        />
 
         {/* Grocery List */}
         <ul>
-          {groceryList.map((item, index) => (
+          {queried.map((item, index) => (
             <li key={index} className="py-4 border-b border-gray-200">
               <h2 className="text-lg font-medium">{item.name}</h2>
               <p>Quantity: {item.quantity} kgs</p>
               {item.notes && <p>Notes: {item.notes}</p>}
-
               <div className="flex gap-2">
-                <div c>
-                  <button
-                    onClick={() => {
-                      handleDeleteItem(index);
-                    }}
-                  >
+                <div>
+                  <button onClick={() => handleDeleteItem(index)}>
                     delete
                   </button>
                 </div>
                 <div>
                   <button onClick={() => handleEditItem(index)}>edit</button>
-                </div>{" "}
+                </div>
               </div>
             </li>
           ))}

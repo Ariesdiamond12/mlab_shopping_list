@@ -1,3 +1,179 @@
 {
-  "items": [{ "name": "itemName", "quantity": "", "notes": "" }]
+  "users": [
+    {
+      "id": "8d4c",
+      "name": "",
+      "surname": "",
+      "email": "kb@icloud.com",
+      "password": "123456789"
+    },
+    {
+      "id": "3b54",
+      "name": "",
+      "surname": "",
+      "email": "kb@icloud.com",
+      "password": "123456789"
+    },
+    {
+      "id": "c62a",
+      "name": "kay",
+      "surname": "bee",
+      "email": "kb@icloud.com",
+      "password": "123456789"
+    },
+    {
+      "id": "abea",
+      "name": "kay",
+      "surname": "bee",
+      "email": "kb@icloud.com",
+      "password": "123456789"
+    },
+    {
+      "id": "7069",
+      "name": "kay",
+      "surname": "bee",
+      "email": "kb@icloud.com",
+      "password": "123456789"
+    },
+    {
+      "id": "78d7",
+      "name": "kay",
+      "surname": "bee",
+      "email": "kb@icloud.com",
+      "password": "123456789"
+    },
+    {
+      "id": "91a6",
+      "name": "kay",
+      "surname": "bee",
+      "email": "kb@icloud.com",
+      "password": "123456789"
+    },
+    {
+      "id": "4a95",
+      "name": "",
+      "surname": "",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "fbc8",
+      "name": "kay",
+      "surname": "bee",
+      "email": "kaybee@icloud.com",
+      "password": "aaaaa"
+    },
+    {
+      "id": "20f6",
+      "name": "kay",
+      "surname": "bee",
+      "email": "kaybee@icloud.com",
+      "password": "aaaaa"
+    },
+    {
+      "id": "8c74",
+      "name": "kay",
+      "surname": "bee",
+      "email": "kaybee@icloud.com",
+      "password": "aaaaa"
+    },
+    {
+      "id": "8255",
+      "name": "kay",
+      "surname": "bee",
+      "email": "kaybee@icloud.com",
+      "password": "aaaaaa"
+    },
+    {
+      "id": "8aff",
+      "username": "kaybee@icloud.com",
+      "password": "aaaaaa"
+    }
+  ],
+  "items": [
+    {
+      "name": "itemName",
+      "quantity": "",
+      "notes": "",
+      "id": "e97d"
+    },
+    {
+      "id": "25aa",
+      "name": "",
+      "quantity": "",
+      "notes": ""
+    },
+    {
+      "id": "9850",
+      "name": "Apples ",
+      "quantity": "2.3",
+      "notes": "Red and Green"
+    },
+    {
+      "id": "ff8f",
+      "name": "Apples",
+      "quantity": "2.3",
+      "notes": "Red and Green apples"
+    },
+    {
+      "id": "c1b2",
+      "name": "Apples",
+      "quantity": "2.3",
+      "notes": "Red and Green apples"
+    },
+    {
+      "id": "c450",
+      "name": "Apples",
+      "quantity": "2.3",
+      "notes": "Red and Green apples"
+    },
+    {
+      "id": "34c4",
+      "name": "Appricot",
+      "quantity": "3",
+      "notes": ""
+    },
+    {
+      "id": "c546",
+      "name": "Bananas",
+      "quantity": "0.5",
+      "notes": "20 bananas"
+    },
+    {
+      "id": "2d6b",
+      "name": "Beetroit",
+      "quantity": "4",
+      "notes": "Beetroit bunch"
+    },
+    {
+      "id": "4cc1",
+      "name": "Apples",
+      "quantity": "2.3",
+      "notes": "Red and Green apples"
+    },
+    {
+      "id": "8353",
+      "name": "Apricots",
+      "quantity": "0.5",
+      "notes": "A bag of apricots"
+    },
+    {
+      "id": "f702",
+      "name": "Banana",
+      "quantity": "1",
+      "notes": "10 bananas"
+    },
+    {
+      "id": "bd82",
+      "name": "Beetroit",
+      "quantity": "2",
+      "notes": "Beetroit bunch"
+    },
+    {
+      "id": "0427",
+      "name": "Carrots",
+      "quantity": "1",
+      "notes": "2 packets of carrots"
+    }
+  ]
 }
