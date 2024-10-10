@@ -1,35 +1,39 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { HiClipboardList } from "react-icons/hi";
 import { BsBasket2Fill } from "react-icons/bs";
 import { useSelector, useDispatch } from "react-redux";
-import { addItem, deleteItem, updateItem } from "../groceryList";
+import {
+  addItem,
+  fetchItem,
+  deleteItem,
+  updateItem,
+} from "../Redux/grocerySlice";
 
 function ShoppingList() {
-  const [setGroceryList] = useState([]);
+  // const [groceryList, setGroceryList] = useState([]);
+  const groceryList = useSelector((state) => state.groceryList);
+
   const [itemName, setItemName] = useState("");
   const [quantity, setQuantity] = useState("");
   const [notes, setNotes] = useState("");
   const [editingItem, setEditingItem] = useState(null);
   const [search, setSearch] = useState("");
-  const [queried, setQueried] = useState(groceryList);
+  //const [queried, setQueried] = useState(groceryList);
   const dispatch = useDispatch();
-  const groceryList = useSelector((state) => state.groceryList);
+
+  useEffect(() => {
+    dispatch(fetchItem());
+  }, [dispatch]);
 
   const handleAddItem = () => {
     if (itemName && quantity) {
       const newItem = { name: itemName, quantity, notes };
-      dispatch(addItem(newItem));
+
       setItemName("");
       setQuantity("");
       setNotes("");
 
-      fetch(`http://localhost:3000/items`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newItem),
-      }).then((response) => {
-        response.json();
-      });
+      // dispatch(addItem(newItem));
     }
   };
 
@@ -81,6 +85,7 @@ function ShoppingList() {
 
   return (
     <div className="bg-[#9BBEC8] flex py-4 min-h-screen justify-evenly">
+      {console.log(ShoppingList)}
       {/* 1st Column */}
       <div className="bg-white place-self-center w-11/12 max-w-md flex flex-col p-7 min-h-[650px] rounded-lg">
         {/* Title */}
@@ -143,25 +148,26 @@ function ShoppingList() {
         />
 
         {/* Grocery List */}
-        <ul>
-          {queried.map((item, index) => (
-            <li key={index} className="py-4 border-b border-gray-200">
-              <h2 className="text-lg font-medium">{item.name}</h2>
-              <p>Quantity: {item.quantity} kgs</p>
-              {item.notes && <p>Notes: {item.notes}</p>}
-              <div className="flex gap-2">
-                <div>
-                  <button onClick={() => handleDeleteItem(index)}>
-                    delete
-                  </button>
+        {/* <ul>
+          {ShoppingList != 0 &&
+            ShoppingList.map((item, index) => (
+              <li key={index} className="py-4 border-b border-gray-200">
+                <h2 className="text-lg font-medium">{item.name}</h2>
+                <p>Quantity: {item.quantity} kgs</p>
+                {item.notes && <p>Notes: {item.notes}</p>}
+                <div className="flex gap-2">
+                  <div>
+                    <button onClick={() => handleDeleteItem(index)}>
+                      delete
+                    </button>
+                  </div>
+                  <div>
+                    <button onClick={() => handleEditItem(index)}>edit</button>
+                  </div>
                 </div>
-                <div>
-                  <button onClick={() => handleEditItem(index)}>edit</button>
-                </div>
-              </div>
-            </li>
-          ))}
-        </ul>
+              </li>
+            ))}
+        </ul> */}
       </div>
     </div>
   );

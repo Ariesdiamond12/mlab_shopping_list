@@ -3,20 +3,12 @@ import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import { Provider } from "react-redux";
-import store from "./store.js";
-import groceryReducer from "./groceryList.js";
-import App from "./App.jsx";
-
-const store = configureStore({
-  reducer: {
-    groceryList: groceryReducer,
-  },
-});
+import store from "./Redux/store.js";
 
 createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  <StrictMode>
     <Provider store={store}>
       <App />
     </Provider>
-  </React.StrictMode>
+  </StrictMode>
 );
