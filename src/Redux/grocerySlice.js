@@ -1,55 +1,46 @@
 import { createSlice } from "@reduxjs/toolkit";
-import ShoppingList from "../components/ShoppingList";
 
 const grocerySlice = createSlice({
   name: "groceryList",
-  // value: { item: "", quantity: 0, notes: "" }
-  initialState: [],
+  initialState: [], // Directly store the items as an array
   reducers: {
-    // ShoppingList: state.ShoppingList;
-
     setItems: (state, action) => {
-      state.groceryList = action.payload;
+      return action.payload; // Replace the state with fetched items
     },
 
     addItem: (state, action) => {
-      // state.groceryList.push(action.payload);
-      addShoppingItem(action.payload);
+      state.push(action.payload); // Directly push the new item into the array
+      addShoppingItem(action.payload); // Post the item to the server
     },
 
-    fetchItem: (state, payload) => {
-      const fetchShoppingList = async () => {
+    fetchItem: (state, action) => {
+      // Fetch items from the server and dispatch `setItems` to update the state
+      const fetchShoppingList = async (dispatch) => {
         await fetch(`http://localhost:3000/items`)
           .then((response) => response.json())
           .then((data) => {
-            console.log(data);
-            setItems(data);
+            dispatch(setItems(data)); // Use dispatch to update state
           });
       };
-
-      fetchShoppingList();
+      fetchShoppingList(action.payload); // Pass dispatch as argument
     },
 
     deleteItem: (state, action) => {
-      state.groceryList = state.groceryList.filter(
-        (_, index) => index !== action.payload
-      );
+      return state.filter((_, index) => index !== action.payload);
     },
+
     updateItem: (state, action) => {
       const { index, updatedItem } = action.payload;
-      state.groceryList[index] = updatedItem;
+      state[index] = updatedItem; // Update the item in the array
     },
   },
 });
 
 const addShoppingItem = async (newItem) => {
-  console.log("trying to add", newItem);
   await fetch(`http://localhost:3000/items`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(newItem),
-  }).then((response) => {
-    response.json();
   });
 };
 

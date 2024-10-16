@@ -98,92 +98,53 @@
       "id": "f67b",
       "username": "kaybee@icloud.com",
       "password": "aaaaaa"
+    },
+    {
+      "id": "d119",
+      "name": "Tumisho",
+      "surname": "Hamilton",
+      "email": "hamilton@icloud.com",
+      "password": "#LH44F1"
+    },
+    {
+      "id": "a6af",
+      "username": "hamilton@icloud.com",
+      "password": "#LH44F1"
+    },
+    {
+      "id": "d083",
+      "username": "hamilton@icloud.com",
+      "password": "#LH44F1"
     }
   ],
   "items": [
     {
-      "name": "itemName",
-      "quantity": "",
-      "notes": "",
-      "id": "e97d"
-    },
-    {
-      "id": "25aa",
-      "name": "",
-      "quantity": "",
-      "notes": ""
-    },
-    {
-      "id": "9850",
-      "name": "Apples ",
-      "quantity": "2.3",
-      "notes": "Red and Green"
-    },
-    {
-      "id": "ff8f",
+      "id": "866f",
       "name": "Apples",
       "quantity": "2.3",
-      "notes": "Red and Green apples"
+      "notes": "Red and Green apples",
+      "category": "Fruits"
     },
     {
-      "id": "c1b2",
-      "name": "Apples",
-      "quantity": "2.3",
-      "notes": "Red and Green apples"
-    },
-    {
-      "id": "c450",
-      "name": "Apples",
-      "quantity": "2.3",
-      "notes": "Red and Green apples"
-    },
-    {
-      "id": "34c4",
-      "name": "Appricot",
-      "quantity": "3",
-      "notes": ""
-    },
-    {
-      "id": "c546",
-      "name": "Bananas",
-      "quantity": "0.5",
-      "notes": "20 bananas"
-    },
-    {
-      "id": "2d6b",
-      "name": "Beetroit",
-      "quantity": "4",
-      "notes": "Beetroit bunch"
-    },
-    {
-      "id": "4cc1",
-      "name": "Apples",
-      "quantity": "2.3",
-      "notes": "Red and Green apples"
-    },
-    {
-      "id": "8353",
-      "name": "Apricots",
-      "quantity": "0.5",
-      "notes": "A bag of apricots"
-    },
-    {
-      "id": "f702",
-      "name": "Banana",
+      "id": "0b3f",
+      "name": "Avocado",
       "quantity": "1",
-      "notes": "10 bananas"
+      "notes": "A bag of avocado",
+      "category": "Vegetables"
     },
     {
-      "id": "bd82",
-      "name": "Beetroit",
+      "id": "d0f2",
+      "name": "Apricot",
+      "quantity": "1",
+      "notes": "A packet of apricots",
+      "category": "Fruits"
+    },
+    {
+      "id": "b452",
+      "name": "Ice Cream",
       "quantity": "2",
-      "notes": "Beetroit bunch"
-    },
-    {
-      "id": "0427",
-      "name": "Carrots",
-      "quantity": "1",
-      "notes": "2 packets of carrots"
+      "notes": "Cookies and Cream ice cream",
+      "category": "Frozen Foods"
     }
   ]
 }

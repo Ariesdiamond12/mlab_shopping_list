@@ -8,18 +8,37 @@ import {
   deleteItem,
   updateItem,
 } from "../Redux/grocerySlice";
+import Navbar from "./Navbar";
 
 function ShoppingList() {
-  // const [groceryList, setGroceryList] = useState([]);
+  const categories = [
+    "All",
+    "Beverages",
+    "Bread/Bakery",
+    "Canned Food",
+    "Dairy",
+    "Dry/Baking Goods",
+    "Frozen Foods",
+    "Meat",
+    "Fruits",
+    "Vegetables",
+    "Cleaning Supplies",
+    "Paper Goods",
+    "Personal Care",
+    "Other",
+  ];
+
   const groceryList = useSelector((state) => state.groceryList);
+  const dispatch = useDispatch();
 
   const [itemName, setItemName] = useState("");
   const [quantity, setQuantity] = useState("");
   const [notes, setNotes] = useState("");
-  const [editingItem, setEditingItem] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [filterCategory, setFilterCategory] = useState("All");
+  const [sortOption, setSortOption] = useState("name"); // Default sort by name
   const [search, setSearch] = useState("");
-  //const [queried, setQueried] = useState(groceryList);
-  const dispatch = useDispatch();
+  const [editingItem, setEditingItem] = useState(null);
 
   useEffect(() => {
     dispatch(fetchItem());
@@ -27,74 +46,89 @@ function ShoppingList() {
 
   const handleAddItem = () => {
     if (itemName && quantity) {
-      const newItem = { name: itemName, quantity, notes };
+      const newItem = {
+        name: itemName,
+        quantity,
+        notes,
+        category: selectedCategory,
+      };
 
+      // Reset the fields
       setItemName("");
       setQuantity("");
       setNotes("");
+      setSelectedCategory("");
 
-      // dispatch(addItem(newItem));
+      dispatch(addItem(newItem));
     }
   };
 
+  // Sort items based on selected sort option
+  const sortedList = [...groceryList].sort((a, b) => {
+    if (sortOption === "name") {
+      return a.name.localeCompare(b.name);
+    } else if (sortOption === "quantity") {
+      return a.quantity - b.quantity;
+    } else if (sortOption === "category") {
+      return a.category.localeCompare(b.category);
+    }
+    return 0;
+  });
+
+  // Filter items by category
+  const filteredList = sortedList.filter(
+    (item) => filterCategory === "All" || item.category === filterCategory
+  );
+
+  // Filter by search term
+  const queriedList = filteredList.filter((item) =>
+    item.name.toLowerCase().includes(search.toLowerCase())
+  );
+
   const handleDeleteItem = (index) => {
-    dispatch(deleteItem(index)); // Dispatch the deleteItem action
-  };
-
-  const handleUpdateItem = (index) => {
-    const updatedItem = {
-      ...groceryList[index],
-      name: itemName,
-      quantity,
-      notes,
-    };
-
-    const updatedList = [
-      ...groceryList.slice(0, index),
-      updatedItem,
-      ...groceryList.slice(index + 1),
-    ];
-
-    setGroceryList(updatedList);
-    setQueried(updatedList);
-    dispatch(updateItem({ index, updatedItem }));
-    setEditingItem(null);
-    setItemName("");
-    setQuantity("");
-    setNotes("");
+    dispatch(deleteItem(index));
   };
 
   const handleEditItem = (index) => {
-    setEditingItem(index);
     const item = groceryList[index];
     setItemName(item.name);
     setQuantity(item.quantity);
     setNotes(item.notes);
+    setSelectedCategory(item.category);
+    setEditingItem(index);
   };
 
-  // Search function
-  const handleSearch = (e) => {
-    const searchTerm = e.target.value.toLowerCase();
-    setSearch(searchTerm);
+  const handleUpdateItem = () => {
+    const updatedItem = {
+      name: itemName,
+      quantity,
+      notes,
+      category: selectedCategory,
+    };
 
-    const filteredList = groceryList.filter((item) =>
-      item.name.toLowerCase().includes(searchTerm)
-    );
-    setQueried(filteredList);
+    dispatch(updateItem({ index: editingItem, updatedItem }));
+    setEditingItem(null);
+
+    // Reset the fields
+    setItemName("");
+    setQuantity("");
+    setNotes("");
+    setSelectedCategory("");
   };
 
   return (
     <div className="bg-[#9BBEC8] flex py-4 min-h-screen justify-evenly">
-      {console.log(ShoppingList)}
-      {/* 1st Column */}
-      <div className="bg-white place-self-center w-11/12 max-w-md flex flex-col p-7 min-h-[650px] rounded-lg">
-        {/* Title */}
+      <Navbar />
+
+      {/* Add Item Section */}
+      <div className="mt-32 bg-white place-self-center w-11/12 max-w-md flex flex-col p-7 min-h-[650px] rounded-lg">
         <div className="flex items-center mt-7 gap-2">
           <HiClipboardList className="text-5xl" />
-          <h1 className="text-3xl font-semibold">Add Grocery</h1>
+          <h1 className="text-3xl font-semibold">
+            {editingItem !== null ? "Edit Grocery" : "Add Grocery"}
+          </h1>
         </div>
 
-        {/* Input Box */}
         <div>
           <input
             className="flex items-center my-7 bg-gray-200 outline-none h-16 w-full pl-6 pr-2 placeholder:text-slate-600 rounded-full"
@@ -104,6 +138,25 @@ function ShoppingList() {
             placeholder="Name of Items"
           />
         </div>
+
+        <label htmlFor="categories">
+          <h1 className="text-lg font-medium">Category</h1>
+        </label>
+        <select
+          className="flex items-center my-7 bg-gray-200 outline-none h-16 w-full pl-6 pr-2 placeholder:text-slate-600 rounded-full"
+          value={selectedCategory}
+          onChange={(e) => setSelectedCategory(e.target.value)}
+        >
+          <option value="" disabled>
+            Select a category
+          </option>
+          {categories.slice(1).map((category, index) => (
+            <option key={index} value={category}>
+              {category}
+            </option>
+          ))}
+        </select>
+
         <label htmlFor="quantity">
           <h1 className="text-lg font-medium">Quantity</h1>
         </label>
@@ -114,6 +167,7 @@ function ShoppingList() {
           onChange={(e) => setQuantity(e.target.value)}
           placeholder="Quantity in kgs"
         />
+
         <label htmlFor="quantity">
           <h1 className="text-lg font-medium">Notes(optional)</h1>
         </label>
@@ -124,50 +178,86 @@ function ShoppingList() {
           onChange={(e) => setNotes(e.target.value)}
           placeholder="Notes"
         />
+
         <button
           className="border-none rounded-full bg-[#146C94] h-16 w-full pl-6 pr-2 text-white text-lg font-medium cursor-pointer"
-          onClick={handleAddItem}
+          onClick={editingItem !== null ? handleUpdateItem : handleAddItem}
         >
-          Add
+          {editingItem !== null ? "Update" : "Add"}
         </button>
       </div>
 
-      {/* 2nd Column */}
-      <div className="bg-white place-self-center w-1/2 max-w-md flex flex-col p-7 min-h-[650px] rounded-lg">
-        {/* Title */}
+      {/* Grocery List Section */}
+      <div className="mt-32 bg-white place-self-center w-1/2 max-w-md flex flex-col p-7 min-h-[680px] rounded-lg">
         <div className="flex items-center mt-7 gap-2">
           <BsBasket2Fill className="text-5xl" />
           <h1 className="text-3xl font-semibold">Grocery List</h1>
         </div>
+
+        {/* Search */}
         <input
           className="flex items-center my-7 bg-gray-200 outline-none h-16 w-full pl-6 pr-2 placeholder:text-slate-600 rounded-full"
           type="text"
           placeholder="Search"
           value={search}
-          onChange={handleSearch}
+          onChange={(e) => setSearch(e.target.value)}
         />
 
-        {/* Grocery List */}
-        {/* <ul>
-          {ShoppingList != 0 &&
-            ShoppingList.map((item, index) => (
+        {/* Filter by Category */}
+        <div className="flex space-x-4 my-4">
+          <select
+            className="bg-gray-200 h-12 w-full rounded-full flex-1"
+            value={filterCategory}
+            onChange={(e) => setFilterCategory(e.target.value)}
+          >
+            {categories.map((category, index) => (
+              <option key={index} value={category}>
+                {category}
+              </option>
+            ))}
+          </select>
+
+          {/* Sort by Option */}
+          <select
+            className="bg-gray-200 h-12 w-full rounded-full flex-1"
+            value={sortOption}
+            onChange={(e) => setSortOption(e.target.value)}
+          >
+            <option value="name">Sort by Name</option>
+            <option value="quantity">Sort by Quantity</option>
+            <option value="category">Sort by Category</option>
+          </select>
+        </div>
+
+        {/* Displaying the List */}
+        <ul>
+          {queriedList.length > 0 ? (
+            queriedList.map((item, index) => (
               <li key={index} className="py-4 border-b border-gray-200">
                 <h2 className="text-lg font-medium">{item.name}</h2>
+                <p>Category: {item.category}</p>
                 <p>Quantity: {item.quantity} kgs</p>
                 {item.notes && <p>Notes: {item.notes}</p>}
-                <div className="flex gap-2">
-                  <div>
-                    <button onClick={() => handleDeleteItem(index)}>
-                      delete
-                    </button>
-                  </div>
-                  <div>
-                    <button onClick={() => handleEditItem(index)}>edit</button>
-                  </div>
+                <div className="flex gap-2 mt-2">
+                  <button
+                    className="bg-red-500 text-white px-4 py-2 rounded-full"
+                    onClick={() => handleDeleteItem(index)}
+                  >
+                    Delete
+                  </button>
+                  <button
+                    className="bg-blue-500 text-white px-4 py-2 rounded-full"
+                    onClick={() => handleEditItem(index)}
+                  >
+                    Edit
+                  </button>
                 </div>
               </li>
-            ))}
-        </ul> */}
+            ))
+          ) : (
+            <p>No items match your criteria.</p>
+          )}
+        </ul>
       </div>
     </div>
   );
