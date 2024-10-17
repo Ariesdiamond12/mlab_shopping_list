@@ -115,6 +115,28 @@
       "id": "d083",
       "username": "hamilton@icloud.com",
       "password": "#LH44F1"
+    },
+    {
+      "id": "65ae",
+      "username": "hamilton@icloud.com",
+      "password": "#LH44F1"
+    },
+    {
+      "id": "72ca",
+      "username": "hamilton@icloud.com",
+      "password": "#LH44F1"
+    },
+    {
+      "id": "df91",
+      "name": "sanah",
+      "surname": "marokane",
+      "email": "sanah.marokane@icloud.com",
+      "password": "Mokgadi1977"
+    },
+    {
+      "id": "5bf8",
+      "username": "sanah.marokane@icloud.com",
+      "password": "Mokgadi1977"
     }
   ],
   "items": [
@@ -145,6 +167,34 @@
       "quantity": "2",
       "notes": "Cookies and Cream ice cream",
       "category": "Frozen Foods"
+    },
+    {
+      "id": "cd49",
+      "name": "Ginger Biscuits",
+      "quantity": "1",
+      "notes": "2 packets of Ginger biscuits",
+      "category": "Bread/Bakery"
+    },
+    {
+      "id": "2269",
+      "name": "Biscuits",
+      "quantity": "1",
+      "notes": "1 packets of Oreo Biscuits and 2 packets of Ginger Biscuits",
+      "category": "Bread/Bakery"
+    },
+    {
+      "id": "9bb5",
+      "name": "Chocolate",
+      "quantity": "1",
+      "notes": "4 slaps of KitKat chocolates",
+      "category": "Other"
+    },
+    {
+      "id": "bdca",
+      "name": "Garlic Bread",
+      "quantity": "1",
+      "notes": "1 Garlic Bread",
+      "category": "Bread/Bakery"
     }
   ]
 }

@@ -9,6 +9,9 @@ function Navbar() {
       <div>
         {/* <h2>Welcome, `${name}` </h2> */}
         <button className="bg-[#5fa8d3] border-none cursor-pointer h-10 w-24 mr-5 text-white rounded-full">
+          Share
+        </button>
+        <button className="bg-[#5fa8d3] border-none cursor-pointer h-10 w-24 mr-5 text-white rounded-full">
           Sign Out
         </button>
       </div>
