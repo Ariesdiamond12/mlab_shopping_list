@@ -240,7 +240,7 @@ function ShoppingList() {
                 {item.notes && <p>Notes: {item.notes}</p>}
                 <div className="flex gap-2 mt-2">
                   <button
-                    className="bg-red-500 text-white px-4 py-2 rounded-full"
+                    className="bg-[#b90504] text-white px-4 py-2 rounded-full"
                     onClick={() => handleDeleteItem(index)}
                   >
                     Delete

@@ -137,6 +137,11 @@
       "id": "5bf8",
       "username": "sanah.marokane@icloud.com",
       "password": "Mokgadi1977"
+    },
+    {
+      "id": "c179",
+      "username": "sanah.marokane@icloud.com",
+      "password": "Mokgadi1977"
     }
   ],
   "items": [
@@ -196,5 +201,22 @@
       "notes": "1 Garlic Bread",
       "category": "Bread/Bakery"
     }
+  ],
+  "itemsToShare": [
+    {
+      "id": "8hu",
+      "sender":"kaybee@icloud.com",
+      "receiver": "hamilton@icloud.com",
+      "items": [
+        {
+          "id": "866f",
+          "name": "Apples",
+          "quantity": "2.3",
+          "notes": "Red and Green apples",
+          "category": "Fruits"
+        }
+      ]
+    }
+   
   ]
 }
