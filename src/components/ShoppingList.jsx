@@ -230,7 +230,7 @@ function ShoppingList() {
         </div>
 
         {/* Displaying the List */}
-        <ul>
+        <ul className="max-h-[400px] overflow-y-auto">
           {queriedList.length > 0 ? (
             queriedList.map((item, index) => (
               <li key={index} className="py-4 border-b border-gray-200">

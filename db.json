@@ -147,6 +147,16 @@
       "id": "ecf1",
       "username": "sanah.marokane@icloud.com",
       "password": "Mokgadi "
+    },
+    {
+      "id": "e439",
+      "username": "sanah.marokane@icloud.com",
+      "password": "Mokgadi1977"
+    },
+    {
+      "id": "c690",
+      "username": "sanah.marokane@icloud.com",
+      "password": "Mokgadi1977"
     }
   ],
   "items": [
@@ -205,6 +215,55 @@
       "quantity": "1",
       "notes": "1 Garlic Bread",
       "category": "Bread/Bakery"
+    },
+    {
+      "id": "a2f4",
+      "name": "Chocolate",
+      "quantity": "1",
+      "notes": "2 slaps of KitKat chocolate",
+      "category": "Other"
+    },
+    {
+      "id": "91ba",
+      "name": "Chocolates",
+      "quantity": "1",
+      "notes": "2 slaps of KitKat ",
+      "category": "Other"
+    },
+    {
+      "id": "e8e3",
+      "name": "Biscuits",
+      "quantity": "2",
+      "notes": "4 packets of Oreo biscuits",
+      "category": "Other"
+    },
+    {
+      "id": "cb6b",
+      "name": "Oats",
+      "quantity": "2",
+      "notes": "1 Jungle Oats ",
+      "category": "Dry/Baking Goods"
+    },
+    {
+      "id": "8246",
+      "name": "Juice",
+      "quantity": "1",
+      "notes": "1 Cranberry Juice",
+      "category": "Beverages"
+    },
+    {
+      "id": "0f60",
+      "name": "Watermelon",
+      "quantity": "2",
+      "notes": "1 whole watermelon",
+      "category": "Fruits"
+    },
+    {
+      "id": "dc90",
+      "name": "Deoderant",
+      "quantity": "1",
+      "notes": "2 Dove Deoderants",
+      "category": "Personal Care"
     }
   ],
   "itemsToShare": [
