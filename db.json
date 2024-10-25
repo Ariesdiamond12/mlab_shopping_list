@@ -49,13 +49,7 @@
       "email": "kb@icloud.com",
       "password": "123456789"
     },
-    {
       "id": "4a95",
-      "name": "",
-      "surname": "",
-      "email": "",
-      "password": ""
-    },
     {
       "id": "fbc8",
       "name": "kay",
@@ -78,52 +72,10 @@
       "password": "aaaaa"
     },
     {
-      "id": "8255",
-      "name": "kay",
-      "surname": "bee",
-      "email": "kaybee@icloud.com",
-      "password": "aaaaaa"
-    },
-    {
-      "id": "8aff",
-      "username": "kaybee@icloud.com",
-      "password": "aaaaaa"
-    },
-    {
-      "id": "2097",
-      "username": "kaybee@icloud.com",
-      "password": "aaaaaa"
-    },
-    {
-      "id": "f67b",
-      "username": "kaybee@icloud.com",
-      "password": "aaaaaa"
-    },
-    {
       "id": "d119",
       "name": "Tumisho",
       "surname": "Hamilton",
       "email": "hamilton@icloud.com",
-      "password": "#LH44F1"
-    },
-    {
-      "id": "a6af",
-      "username": "hamilton@icloud.com",
-      "password": "#LH44F1"
-    },
-    {
-      "id": "d083",
-      "username": "hamilton@icloud.com",
-      "password": "#LH44F1"
-    },
-    {
-      "id": "65ae",
-      "username": "hamilton@icloud.com",
-      "password": "#LH44F1"
-    },
-    {
-      "id": "72ca",
-      "username": "hamilton@icloud.com",
       "password": "#LH44F1"
     },
     {
@@ -134,136 +86,37 @@
       "password": "Mokgadi1977"
     },
     {
-      "id": "5bf8",
-      "username": "sanah.marokane@icloud.com",
-      "password": "Mokgadi1977"
-    },
-    {
-      "id": "c179",
-      "username": "sanah.marokane@icloud.com",
-      "password": "Mokgadi1977"
-    },
-    {
-      "id": "ecf1",
-      "username": "sanah.marokane@icloud.com",
-      "password": "Mokgadi "
-    },
-    {
-      "id": "e439",
-      "username": "sanah.marokane@icloud.com",
-      "password": "Mokgadi1977"
-    },
-    {
-      "id": "c690",
-      "username": "sanah.marokane@icloud.com",
-      "password": "Mokgadi1977"
+      "id": "3bdd",
+      "name": "Ashley",
+      "surname": "Graham",
+      "email": "ash@gmail.com",
+      "password": "@Ashley_1204"
     }
   ],
   "items": [
     {
       "id": "866f",
+      "userId": "3bdd",
       "name": "Apples",
       "quantity": "2.3",
       "notes": "Red and Green apples",
       "category": "Fruits"
     },
     {
-      "id": "0b3f",
-      "name": "Avocado",
-      "quantity": "1",
-      "notes": "A bag of avocado",
-      "category": "Vegetables"
-    },
-    {
-      "id": "d0f2",
-      "name": "Apricot",
-      "quantity": "1",
-      "notes": "A packet of apricots",
+      "id": "12f",
+      "userId": "3bdd",
+      "name": "Bananas",
+      "quantity": "2.3",
+      "notes": "10",
       "category": "Fruits"
     },
     {
-      "id": "b452",
-      "name": "Ice Cream",
-      "quantity": "2",
-      "notes": "Cookies and Cream ice cream",
-      "category": "Frozen Foods"
-    },
-    {
-      "id": "cd49",
-      "name": "Ginger Biscuits",
+      "id": "f722",
+      "userId": "20b0",
+      "name": "Cranberry Juice",
       "quantity": "1",
-      "notes": "2 packets of Ginger biscuits",
-      "category": "Bread/Bakery"
-    },
-    {
-      "id": "2269",
-      "name": "Biscuits",
-      "quantity": "1",
-      "notes": "1 packets of Oreo Biscuits and 2 packets of Ginger Biscuits",
-      "category": "Bread/Bakery"
-    },
-    {
-      "id": "9bb5",
-      "name": "Chocolate",
-      "quantity": "1",
-      "notes": "4 slaps of KitKat chocolates",
-      "category": "Other"
-    },
-    {
-      "id": "bdca",
-      "name": "Garlic Bread",
-      "quantity": "1",
-      "notes": "1 Garlic Bread",
-      "category": "Bread/Bakery"
-    },
-    {
-      "id": "a2f4",
-      "name": "Chocolate",
-      "quantity": "1",
-      "notes": "2 slaps of KitKat chocolate",
-      "category": "Other"
-    },
-    {
-      "id": "91ba",
-      "name": "Chocolates",
-      "quantity": "1",
-      "notes": "2 slaps of KitKat ",
-      "category": "Other"
-    },
-    {
-      "id": "e8e3",
-      "name": "Biscuits",
-      "quantity": "2",
-      "notes": "4 packets of Oreo biscuits",
-      "category": "Other"
-    },
-    {
-      "id": "cb6b",
-      "name": "Oats",
-      "quantity": "2",
-      "notes": "1 Jungle Oats ",
-      "category": "Dry/Baking Goods"
-    },
-    {
-      "id": "8246",
-      "name": "Juice",
-      "quantity": "1",
-      "notes": "1 Cranberry Juice",
+      "notes": "1 cranberry juice",
       "category": "Beverages"
-    },
-    {
-      "id": "0f60",
-      "name": "Watermelon",
-      "quantity": "2",
-      "notes": "1 whole watermelon",
-      "category": "Fruits"
-    },
-    {
-      "id": "dc90",
-      "name": "Deoderant",
-      "quantity": "1",
-      "notes": "2 Dove Deoderants",
-      "category": "Personal Care"
     }
   ],
   "itemsToShare": [
@@ -274,6 +127,7 @@
       "items": [
         {
           "id": "866f",
+          "userId": "3bdd",
           "name": "Apples",
           "quantity": "2.3",
           "notes": "Red and Green apples",

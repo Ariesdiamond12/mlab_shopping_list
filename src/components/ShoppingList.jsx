@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useId, useState } from "react";
 import { HiClipboardList } from "react-icons/hi";
 import { BsBasket2Fill } from "react-icons/bs";
 import { useSelector, useDispatch } from "react-redux";
@@ -31,6 +31,8 @@ function ShoppingList() {
   const groceryList = useSelector((state) => state.groceryList);
   const dispatch = useDispatch();
 
+  const [user, setUser] = useState({});
+
   const [itemName, setItemName] = useState("");
   const [quantity, setQuantity] = useState("");
   const [notes, setNotes] = useState("");
@@ -42,11 +44,13 @@ function ShoppingList() {
 
   useEffect(() => {
     dispatch(fetchItem());
+    setUser(JSON.parse(localStorage.getItem("userData")));
   }, [dispatch]);
 
   const handleAddItem = () => {
-    if (itemName && quantity) {
+    if (user && itemName && quantity) {
       const newItem = {
+        userId: user.id,
         name: itemName,
         quantity,
         notes,
@@ -119,6 +123,7 @@ function ShoppingList() {
   return (
     <div className="bg-[#9BBEC8] flex py-4 min-h-screen justify-evenly">
       <Navbar />
+      {console.log(groceryList)}
 
       {/* Add Item Section */}
       <div className="mt-32 bg-white place-self-center w-11/12 max-w-md flex flex-col p-7 min-h-[650px] rounded-lg">

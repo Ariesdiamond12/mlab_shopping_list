@@ -22,7 +22,11 @@ function Login() {
       if (response.ok) {
         const userData = await response.json();
         // If the server responds successfully the user data will be returned from the server and is going to be stored in the
-        localStorage.setItem("userData", JSON.stringify(userData));
+        localStorage.setItem(
+          "userData",
+          JSON.stringify({ id: userData.id, username: userData.username })
+        );
+
         navigate("/shopping-list");
       } else {
         setError("Invalid username or password");

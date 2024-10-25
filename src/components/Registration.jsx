@@ -43,7 +43,10 @@ function Registration() {
 
       {/* Form */}
       <div className="flex justify-center items-center h-full">
-        <form className="max-w-[400px] w-full mx-auto bg-white p-8 rounded-lg">
+        <form
+          className="max-w-[400px] w-full mx-auto bg-white p-8 rounded-lg"
+          onSubmit={handleRegister}
+        >
           <h2 className="text-3xl font-bold text-center py-8">Registration</h2>
           <div className="flex flex-col py-2">
             <label> Name</label>
@@ -51,6 +54,9 @@ function Registration() {
               type="text"
               className="border p-2 rounded-lg"
               value={name}
+              required
+              minLength="3"
+              maxLength="8"
               onChange={(e) => setName(e.target.value)}
             />
           </div>
@@ -60,6 +66,7 @@ function Registration() {
               className="border p-2 rounded-lg"
               type="text"
               value={surname}
+              required
               onChange={(e) => setSurname(e.target.value)}
             />
           </div>
@@ -69,6 +76,7 @@ function Registration() {
               className="border p-2 rounded-lg"
               type="text"
               value={email}
+              required
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
@@ -78,12 +86,15 @@ function Registration() {
               className="border p-2 rounded-lg"
               type="password"
               value={password}
+              required
+              minLength="6"
+              maxLength="12"
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <button
             className="w-full py-3 mt-8 bg-[#001845] hover:bg-[#0353a4] relative text-white rounded-lg"
-            onClick={handleRegister}
+            type="submit"
           >
             Register
           </button>

@@ -19,7 +19,17 @@ const grocerySlice = createSlice({
         await fetch(`http://localhost:3000/items`)
           .then((response) => response.json())
           .then((data) => {
-            dispatch(setItems(data)); // Use dispatch to update state
+            console.log(data);
+
+            const user = JSON.parse(localStorage.getItem("userData"));
+            // Filter the data based on userId
+            const filteredItems = data.filter(
+              (item) => item.userId === user.id
+            );
+
+            // Dispatch the filtered items or log them
+            console.log(filteredItems);
+           setItems(filteredItems); // Uncomment this line to update state
           });
       };
       fetchShoppingList(action.payload); // Pass dispatch as argument
