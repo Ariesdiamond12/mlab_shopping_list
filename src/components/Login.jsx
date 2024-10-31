@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Writing from "../assets/write.jpg";
+import PrivacyModal from "./PrivacyModal";
 
 function Login() {
   const navigate = useNavigate();
@@ -14,20 +15,23 @@ function Login() {
       // Simulate API call to authenticate user
       // The username and password will be sent to the POST request
       const response = await fetch("http://localhost:3000/users", {
-        method: "POST",
+        method: "GET",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
       });
 
       if (response.ok) {
         const userData = await response.json();
-        // If the server responds successfully the user data will be returned from the server and is going to be stored in the
-        localStorage.setItem(
-          "userData",
-          JSON.stringify({ id: userData.id, username: userData.username })
-        );
 
-        navigate("/shopping-list");
+          console.log(userData);
+          
+        // If the server responds successfully the user data will be returned from the server and is going to be stored in the
+        // localStorage.setItem(
+        //   "userData",
+        //   JSON.stringify({ id: userData.id, username: userData.username })
+        // );
+
+        // navigate("/shopping-list");
       } else {
         setError("Invalid username or password");
       }
@@ -72,6 +76,8 @@ function Login() {
           >
             Log In
           </button>
+          <PrivacyModal/>
+          <div></div>
           <div>
             <p>
               Don't have an account?{" "}

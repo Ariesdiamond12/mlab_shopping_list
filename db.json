@@ -1,69 +1,5 @@
 {
-  "users": [
-    {
-      "id": "8d4c",
-      "name": "",
-      "surname": "",
-      "email": "kb@icloud.com",
-      "password": "123456789"
-    },
-    {
-      "id": "3b54",
-      "name": "",
-      "surname": "",
-      "email": "kb@icloud.com",
-      "password": "123456789"
-    },
-    {
-      "id": "c62a",
-      "name": "kay",
-      "surname": "bee",
-      "email": "kb@icloud.com",
-      "password": "123456789"
-    },
-    {
-      "id": "abea",
-      "name": "kay",
-      "surname": "bee",
-      "email": "kb@icloud.com",
-      "password": "123456789"
-    },
-    {
-      "id": "7069",
-      "name": "kay",
-      "surname": "bee",
-      "email": "kb@icloud.com",
-      "password": "123456789"
-    },
-    {
-      "id": "78d7",
-      "name": "kay",
-      "surname": "bee",
-      "email": "kb@icloud.com",
-      "password": "123456789"
-    },
-    {
-      "id": "91a6",
-      "name": "kay",
-      "surname": "bee",
-      "email": "kb@icloud.com",
-      "password": "123456789"
-    },
-      "id": "4a95",
-    {
-      "id": "fbc8",
-      "name": "kay",
-      "surname": "bee",
-      "email": "kaybee@icloud.com",
-      "password": "aaaaa"
-    },
-    {
-      "id": "20f6",
-      "name": "kay",
-      "surname": "bee",
-      "email": "kaybee@icloud.com",
-      "password": "aaaaa"
-    },
+  "users": [    
     {
       "id": "8c74",
       "name": "kay",
@@ -91,6 +27,13 @@
       "surname": "Graham",
       "email": "ash@gmail.com",
       "password": "@Ashley_1204"
+    },
+    {
+      "id": "8b4b",
+      "name": "Kabelo",
+      "surname": "Matlakala",
+      "email": "kb@icloud.com",
+      "password": "@Matlakala"
     }
   ],
   "items": [
@@ -117,6 +60,30 @@
       "quantity": "1",
       "notes": "1 cranberry juice",
       "category": "Beverages"
+    },
+    {
+      "id": "c0d3",
+      "userId": "026d",
+      "name": "Apples",
+      "quantity": "1",
+      "notes": "Green apples",
+      "category": "Fruits"
+    },
+    {
+      "id": "92e3",
+      "userId": "026d",
+      "name": "Apricaots",
+      "quantity": "23",
+      "notes": "2 packs of apricots",
+      "category": "Fruits"
+    },
+    {
+      "id": "92ed",
+      "userId": "026d",
+      "name": "Chocolates",
+      "quantity": "1",
+      "notes": "2",
+      "category": "Other"
     }
   ],
   "itemsToShare": [

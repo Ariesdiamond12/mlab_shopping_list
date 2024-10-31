@@ -10,7 +10,10 @@ function Navbar() {
       const response = await fetch("http://localhost:3000/itemsToShare", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({}),
+        body: JSON.stringify({
+        
+
+        }),
       });
 
       const data = await response.json();
@@ -32,6 +35,7 @@ function Navbar() {
             className="flex items-center my-7 bg-gray-200 outline-none h-10 w-full pl-6 pr-2 placeholder:text-slate-600 rounded-full translate-x-12"
             type="text"
             value={email}
+            placeholder="email..."
             onChange={(e) => {
               setEmail(e.target.value);
             }}
