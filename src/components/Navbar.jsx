@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; 
 
 function Navbar() {
   const [email, setEmail] = useState();
+  const navigate = useNavigate()
 
   const handleEmail = async (e) => {
     e.preventDefault();
@@ -21,6 +23,12 @@ function Navbar() {
     } catch (error) {
       // setError("Error registering user");
     }
+  };
+
+  const handleLogout = () => {
+    // Clear any user session data (e.g., localStorage)
+    localStorage.removeItem("users");
+    navigate("/login"); 
   };
 
   return (
@@ -48,7 +56,7 @@ function Navbar() {
           </button>
         </form>
 
-        <button className="bg-[#5fa8d3] border-none cursor-pointer h-10 w-24 mr-5 text-white rounded-full">
+        <button className="bg-[#5fa8d3] border-none cursor-pointer h-10 w-24 mr-5 text-white rounded-full" onClick={handleLogout}>
           Sign Out
         </button>
       </div>
