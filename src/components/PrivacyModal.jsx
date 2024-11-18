@@ -13,7 +13,7 @@ function PrivacyModal() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   return (
     <>
-      <Button onPress={onOpen} className="items-center w-48 py-2 ml-4 rounded-lg bg-[#001845] hover:bg-[#0353a4] text-white">Privacy & Policy</Button>
+      <Button onPress={onOpen} className="items-center w-36 py-2 ml-4 rounded-lg bg-[#001845] hover:bg-[#0353a4] text-white">Privacy & Policy</Button>
       <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
         <ModalContent>
           {(onClose) => (

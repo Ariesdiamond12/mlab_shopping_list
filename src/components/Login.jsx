@@ -15,23 +15,16 @@ function Login() {
       // Simulate API call to authenticate user
       // The username and password will be sent to the POST request
       const response = await fetch("http://localhost:3000/users", {
-        method: "GET",
+        method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
       });
 
       if (response.ok) {
         const userData = await response.json();
-
-          console.log(userData);
-          
         // If the server responds successfully the user data will be returned from the server and is going to be stored in the
-        // localStorage.setItem(
-        //   "userData",
-        //   JSON.stringify({ id: userData.id, username: userData.username })
-        // );
-
-        // navigate("/shopping-list");
+        localStorage.setItem("userData", JSON.stringify(userData));
+        navigate("/shopping-list");
       } else {
         setError("Invalid username or password");
       }
@@ -43,7 +36,7 @@ function Login() {
   return (
     <div className="relative w-full h-screen bg-zinc-800/90">
       <img
-        className="absolute w-full h-full object-cover mix-blend-overlay -z-50"
+        className="absolute w-full h-full object-cover -z-50"
         src={Writing}
         alt=""
       />
@@ -70,14 +63,6 @@ function Login() {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <button
-            className="w-full py-3 mt-8 bg-[#001845] hover:bg-[#0353a4] relative text-white rounded-lg"
-            onClick={handleSignIn}
-          >
-            Log In
-          </button>
-          <PrivacyModal/>
-          <div></div>
           <div>
             <p>
               Don't have an account?{" "}
@@ -86,6 +71,13 @@ function Login() {
               </a>
             </p>
           </div>
+          <button
+            className="w-full py-3 mt-8 mb-5 bg-[#001845] hover:bg-[#0353a4] relative text-white rounded-lg"
+            onClick={handleSignIn}
+          >
+            Log In
+          </button>
+          <PrivacyModal/>
         </form>
       </div>
     </div>

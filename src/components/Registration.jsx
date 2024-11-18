@@ -36,7 +36,7 @@ function Registration() {
   return (
     <div className="relative w-full h-screen bg-zinc-800/90">
       <img
-        className="absolute w-full h-full object-cover mix-blend-overlay -z-50 "
+        className="absolute w-full h-full object-cover -z-50 "
         src={Writing}
         alt=""
       />
