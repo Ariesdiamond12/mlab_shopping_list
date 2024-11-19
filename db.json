@@ -63,6 +63,28 @@
       "id": "d00d",
       "username": "mamodulo@gmail.com",
       "password": "@Mamodulo200"
+    },
+    {
+      "id": "2d86",
+      "name": "tumisho",
+      "surname": "letsoalo",
+      "email": "tumi@outlook.com",
+      "password": "#Tumisho_120"
+    },
+    {
+      "id": "36f1",
+      "username": "tumi@outlook.com",
+      "password": "#Tumisho_1204"
+    },
+    {
+      "id": "d605",
+      "username": "tumisho@outlook.com",
+      "password": "#Tumisho_1204"
+    },
+    {
+      "id": "4f6f",
+      "username": "tumisho@outlook.com",
+      "password": "#Tumisho_1204"
     }
   ],
   "items": [
@@ -137,6 +159,30 @@
       "quantity": "1",
       "notes": "2 slaps of KitKat chocolate",
       "category": "Other"
+    },
+    {
+      "id": "2aa5",
+      "userId": "d605",
+      "name": "Ice Cream",
+      "quantity": "1",
+      "notes": "2 tubs of tin roof ice cream",
+      "category": "Dairy"
+    },
+    {
+      "id": "7c48",
+      "userId": "d605",
+      "name": "PawPaw",
+      "quantity": "1",
+      "notes": "1 PawPaw",
+      "category": "Fruits"
+    },
+    {
+      "id": "bb1f",
+      "userId": "d605",
+      "name": "Magwinya",
+      "quantity": "1",
+      "notes": "6 magwinyas",
+      "category": "Bread/Bakery"
     }
   ],
   "itemsToShare": [

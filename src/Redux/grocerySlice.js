@@ -1,8 +1,9 @@
+//This code sets up a redux slice and store for managing the grocery list 
 import { createSlice } from "@reduxjs/toolkit";
 
 const grocerySlice = createSlice({
-  name: "groceryList",
-  initialState: [], // Directly store the items as an array
+  name: "groceryList", //name of the slice
+  initialState: [], //an empty array, that will hold the grocery items/ Directly store the items as an array
   reducers: {
     setItems: (state, action) => {
       return action.payload; // Replace the state with fetched items

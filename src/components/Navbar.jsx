@@ -38,7 +38,7 @@ function Navbar() {
       </div>
 
       <div className="flex items-center">
-        <form className="flex items-center" onSubmit={handleEmail}>
+        {/* <form className="flex items-center" onSubmit={handleEmail}>
           <input
             className="flex items-center my-7 bg-gray-200 outline-none h-10 w-full pl-6 pr-2 placeholder:text-slate-600 rounded-full translate-x-12"
             type="text"
@@ -54,7 +54,7 @@ function Navbar() {
           >
             Share
           </button>
-        </form>
+        </form> */}
 
         <button className="bg-[#5fa8d3] border-none cursor-pointer h-10 w-24 mr-5 text-white rounded-full" onClick={handleLogout}>
           Sign Out
