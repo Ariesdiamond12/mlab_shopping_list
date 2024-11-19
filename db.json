@@ -58,6 +58,11 @@
       "id": "1af3",
       "username": "mamodulo@gmail.com",
       "password": "@Mamodulo200"
+    },
+    {
+      "id": "d00d",
+      "username": "mamodulo@gmail.com",
+      "password": "@Mamodulo200"
     }
   ],
   "items": [
@@ -124,6 +129,14 @@
       "quantity": "1",
       "notes": "2 tubs of tin roof ice cream",
       "category": "Dairy"
+    },
+    {
+      "id": "de45",
+      "userId": "d00d",
+      "name": "Chocolate",
+      "quantity": "1",
+      "notes": "2 slaps of KitKat chocolate",
+      "category": "Other"
     }
   ],
   "itemsToShare": [

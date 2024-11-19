@@ -13,6 +13,7 @@
 
 1. Clone the repository using `git clone https://github.com/Ariesdiamond12/mlab_shopping_list
 2. Install the dependencies using `npm install`
-3. Start the application using `npm run dev`
-4. Open the application in your browser using `http://localhost:5173`
-5. Interact with the application to add, remove, and edit items in the shopping list
+3. Start the server by running `npx json-server --watch db.json`
+4. Start the application using `npm run dev`
+5. Open the application in your browser using `http://localhost:5173`
+6. Interact with the application to add, remove, and edit items in the shopping list
